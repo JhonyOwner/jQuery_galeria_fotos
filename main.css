@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #5f27cd;  /*Mudou a cor do back*/
+    padding: 16px 0;    /*Colocou espaçamento interno para ↑ e ↓ */
+    color: #ffffff; /*Mudou as cores*/     
+    display: flex;  /*Deixou o botão ao lado do titulo*/
+    border-bottom: 16px solid #341f97;  /*Cria uma separação solida */
+    justify-content: center;    /*Centralizou o conteudo*/
+    text-transform: uppercase;  /*Titulo Maiusculo*/
+    font-style: italic; /*Mudou a fonte para italic*/
+}
+
+header button {
+    margin-left: 16px;  /*Espaçamento externo para esquerda*/
+}
+
+form {
+    background-color: #c8d6e5; /*Cor de Back*/
+    padding: 24px 0;    /*Espaçamento interno para ↑ e ↓*/
+    text-align: center;     /*Alinhamento de texto e botões, mais recomendado*/
+    display: none;          /*Esconde o form*/
+}
+
+form h2 {
+    margin-bottom: 16px;    /*Espaçamento entre o texto e os inputs, buttons*/
+}
+
+input,
+button {
+    padding: 8px;   /*Cria um espaçamento interno do button e do input de mesmo tamanho*/
+}
+
+button {
+    background-color: #009432;  /*cor dos botões*/
+    border: none;   /*Remove a borda*/
+    font-weight: bold;  /*Deixou em negrito*/
+    text-transform: uppercase;  /*Maiusculo*/
+    color: #ffffff; /*Cor branca*/
+    cursor: pointer;    /*Coloca um cursor quando passa em cima dos botões*/
+}
+
+#botao-cancelar {     /*Seleciona o id do botão cancelar*/ 
+    background-color: #ff0000;  /*muda de cor*/
+}
+
+ul {
+    display: flex;  /*Um ao lado do outro*/
+    flex-wrap: wrap;    /*Sempre quando chegar no limite da tela, cria uma nova linha*/
+}
+
+ul li {
+    max-width: 25%; /*Tamanho maximo*/
+    list-style: none;   /*Remove uma bolinha que fica na img*/
+    position: relative; /*Não desestrutura a pagina pois esse é o lemento pai do .overlay-imagem-link*/
+    max-height: 280px;  /*Tamanho Maximo*/
+    overflow-y: hidden;     /*Tudo que passar de 280px será cortado e ocultado isso na horizontal*/
+}       
+
+ul li img {
+    width: 100%;    /*Imagem possuir 100% dos 25%*/
+}
+
+.overlay-imagem-link {
+    padding: 16px;  /*Tamanho interno de 16px */
+    background-color: rgba(0, 0, 0, 0.7);   /*Background preto com transparencia*/
+    position: absolute; /*Permite que o coloque no canto inferior usando bottom por ex*/
+    bottom: 0; /*100% para baixo*/
+    left: 0;    /*100% para esquerda*/
+    width: 100%;    /*Ocupar 100%*/
+    opacity: 0; /*Deixa apagado ate passar o mouse por cima la em hover*/
+    transition: all ease .4s;   /*Gera uma transição para aparecer e sumir*/
+}
+
+.overlay-imagem-link a {
+    color: #ffffff; /*Coloca Branco*/
+    text-decoration: none;  /*Remove o _*/
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1; /*Aparece o texto*/
+}
